@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
             }
+            delavci.setText("");
             for (String row:data){
                 String currentText = delavci.getText().toString();
                 delavci.setText(currentText+"\n\n"+row);
