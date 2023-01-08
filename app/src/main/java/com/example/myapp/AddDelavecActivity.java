@@ -18,7 +18,9 @@ public class AddDelavecActivity extends AppCompatActivity {
     private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
 
     public void addDelavec(View view){
+        if (view != null){
 
+        }
     }
 
     @Override
