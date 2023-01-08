@@ -1,6 +1,5 @@
 package com.example.myapp;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +27,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private TextView delavci;
-    private String url = "https://knjigovodstvo.azurewebsites.net/";
+    private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
