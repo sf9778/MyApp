@@ -10,16 +10,25 @@ import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class AddDelavecActivity extends AppCompatActivity {
     private TextView status;
     private EditText name;
     private EditText surname;
     private RequestQueue requestQueue;
     private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
-
     public void addDelavec(View view){
-        if (view != null){
-
+        try {
+            this.status.setText("Objavljanje na: "+url);
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("first_name",name);
+            jsonBody.put("last_name",surname);
+        } catch(JSONException e){
+            e.printStackTrace();
+        } catch(JSONException e){
+            e.printStackTrace();
         }
     }
 
