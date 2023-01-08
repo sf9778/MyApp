@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,14 +29,16 @@ public class AddDelavecActivity extends AppCompatActivity {
     private TextView status;
     private EditText name;
     private EditText surname;
+    private EditText id;
     private RequestQueue requestQueue;
     private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
     public void addDelavec(View view){
         try {
             this.status.setText("Objavljanje na: "+url);
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("first_name",name);
-            jsonBody.put("last_name",surname);
+            jsonBody.put("ime",name);
+            jsonBody.put("priimek",surname);
+            jsonBody.put("id",id);
             final String requestBody = jsonBody.toString();
             status.setText(requestBody);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -87,5 +90,7 @@ public class AddDelavecActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.ime);
         surname = (EditText) findViewById(R.id.priimek);
         status = (TextView) findViewById(R.id.stanje);
+        id = (EditText) findViewById(R.id.delavecID);
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
     }
 }
