@@ -39,10 +39,11 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="addDelavec"
             android:text="Pošlji" />
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/stanje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Status" />
