@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -34,13 +34,14 @@ public class AddDelavecActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private final String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
 
+
     public void addDelavec(View view){
         status.setText("Objavljanje na: "+url);
         try {
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("ime",name);
-            jsonBody.put("priimek",surname);
-            jsonBody.put("id",id);
+            jsonBody.put("ime",name.getText());
+            jsonBody.put("priimek",surname.getText());
+            jsonBody.put("id",id.getText());
             final String requestBody = jsonBody.toString();
 
             status.setText(requestBody);
