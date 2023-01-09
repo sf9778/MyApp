@@ -37,6 +37,7 @@ public class AddDelavecActivity extends AppCompatActivity {
     private String value;
     public void addDelavec(View view){
         status.setText("Objavljanje na: "+url);
+
         try {
             JSONObject jsonBody = new JSONObject();
             text = name.getText().toString();
@@ -88,7 +89,10 @@ public class AddDelavecActivity extends AppCompatActivity {
                 }
 
             };
+
+
             requestQueue.add(stringRequest);
+            //status.setText(stringRequest.toString());
         } catch(JSONException e){
             e.printStackTrace();
         }
