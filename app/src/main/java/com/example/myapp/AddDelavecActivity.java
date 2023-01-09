@@ -2,6 +2,7 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,9 +33,10 @@ public class AddDelavecActivity extends AppCompatActivity {
     private EditText id;
     private RequestQueue requestQueue;
     private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
+
     public void addDelavec(View view){
+        this.status.setText("Objavljanje na: "+url);
         try {
-            this.status.setText("Objavljanje na: "+url);
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("ime",name);
             jsonBody.put("priimek",surname);
