@@ -28,7 +28,13 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private TextView delavci;
     private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
-
+    public static final String EXTRA_MESSAGE = "com.example.myapp.MESSAGE";
+    public void addDelavecActivity(View view){
+        Intent intent = new Intent(this,AddDelavecActivity.class);
+        String message = "Dodaj studenta v seznam.";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
