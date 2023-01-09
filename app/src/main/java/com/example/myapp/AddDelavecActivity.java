@@ -33,16 +33,23 @@ public class AddDelavecActivity extends AppCompatActivity {
     private EditText id;
     private RequestQueue requestQueue;
     private final String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
-
-
+    private String text;
+    private String value;
     public void addDelavec(View view){
         status.setText("Objavljanje na: "+url);
         try {
             JSONObject jsonBody = new JSONObject();
-            jsonBody.put("ime",name.getText());
-            jsonBody.put("priimek",surname.getText());
-            jsonBody.put("id",id.getText());
+            text = name.getText().toString();
+            value = text.substring(4);
+            jsonBody.put("ime",value);
+            text = surname.getText().toString();
+            value = text.substring(8);
+            jsonBody.put("priimek",value);
+            text = id.getText().toString();
+            value = text.substring(3);
+            jsonBody.put("id",value);
             final String requestBody = jsonBody.toString();
+
 
             status.setText(requestBody);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
