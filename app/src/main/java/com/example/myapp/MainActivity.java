@@ -1,10 +1,13 @@
 package com.example.myapp;
 
+
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+
 import android.os.Bundle;
 
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
+
         delavci = (TextView) findViewById(R.id.delavci);
     }
 

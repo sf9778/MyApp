@@ -51,10 +51,10 @@
             android:text="Pošlji" />
 
         <TextView
-            android:id="@+id/stanje"
+            android:id="@+id/status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Status" />
+            android:text="status" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

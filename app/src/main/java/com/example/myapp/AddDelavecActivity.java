@@ -91,7 +91,7 @@ public class AddDelavecActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_delavec);
         name = (EditText) findViewById(R.id.ime);
         surname = (EditText) findViewById(R.id.priimek);
-        status = (TextView) findViewById(R.id.stanje);
+        status = (TextView) findViewById(R.id.status);
         id = (EditText) findViewById(R.id.delavecID);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
     }
