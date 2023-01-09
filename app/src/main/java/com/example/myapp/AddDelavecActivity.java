@@ -1,8 +1,7 @@
 package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+//import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,21 +26,23 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 
 public class AddDelavecActivity extends AppCompatActivity {
+
     private TextView status;
     private EditText name;
     private EditText surname;
     private EditText id;
     private RequestQueue requestQueue;
-    private String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
+    private final String url = "https://knjigovodstvo.azurewebsites.net/api/v1/delavci";
 
     public void addDelavec(View view){
-        this.status.setText("Objavljanje na: "+url);
+        status.setText("Objavljanje na: "+url);
         try {
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("ime",name);
             jsonBody.put("priimek",surname);
             jsonBody.put("id",id);
             final String requestBody = jsonBody.toString();
+
             status.setText(requestBody);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
